@@ -18,4 +18,8 @@ export class RoleService {
   getRoles(): Observable<Role[]> {
     return this.http.get<Role[]>(this.baseUrl);
   }
+
+  updateUserRole(email: string, newRole: string): Observable<any> {
+    return this.http.post<any>(`${this.baseUrl}/update`, { email, newRole });
+  }
 }

@@ -3,7 +3,38 @@
     <button class="btn btn-primary mb-3" (click)="openAddEmployeeModal()">
       Add Employee
     </button>
-    <!-- Employee list/data grid goes here -->
+  
+    <!-- Employee List Table -->
+    <table class="table table-bordered table-hover" *ngIf="employees.length > 0; else noEmployees">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>Department</th>
+          <th>Role</th>
+          <th style="width: 120px;">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let emp of employees">
+          <td>{{ emp.name }}</td>
+          <td>{{ emp.email }}</td>
+          <td>{{ emp.phone }}</td>
+          <td>{{ emp.department }}</td>
+          <td>{{ emp.roleId }}</td>
+          <td>
+            <!-- For now, just a Delete button; you can add Edit logic if desired -->
+            <button class="btn btn-sm btn-danger" (click)="deleteEmployee(emp.id!)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <!-- No employees placeholder -->
+    <ng-template #noEmployees>
+      <p>No employees found. Click "Add Employee" to create a new record.</p>
+    </ng-template>
   
     <!-- Modal for Add Employee -->
     <div #employeeModal class="modal fade" tabindex="-1" aria-labelledby="employeeModalLabel" aria-hidden="true">

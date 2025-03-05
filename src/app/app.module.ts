@@ -23,6 +23,7 @@ import { SidebarComponent } from './shared/sidebar/sidebar.component';
 import { DarkModeToggleComponent } from './shared/dark-mode-toggle/dark-mode-toggle.component';
 import { RoleService } from './shared/role.service';
 import JwtDecode from 'jwt-decode';
+import { MainLayoutComponent } from './main-layout/main-layout.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import JwtDecode from 'jwt-decode';
     EmployeeFormComponent,
     HeaderComponent,
     SidebarComponent,
-    DarkModeToggleComponent
+    DarkModeToggleComponent,
+    MainLayoutComponent
   ],
   imports: [
     BrowserModule,
