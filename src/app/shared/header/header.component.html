@@ -1,0 +1,31 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <div class="collapse navbar-collapse" id="navbarContent">
+        <ul class="navbar-nav ms-auto align-items-center">
+          <li class="nav-item me-3">
+            <app-dark-mode-toggle></app-dark-mode-toggle>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" role="button"
+               data-bs-toggle="dropdown" aria-expanded="false">
+              <img src="assets/user-icon.png" alt="Profile Icon" width="30" height="30" class="rounded-circle me-2">
+              <span>Profile</span>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li>
+                <button class="dropdown-item" (click)="goToProfileSettings()">Profile Settings</button>
+              </li>
+              <li>
+                <button class="dropdown-item" (click)="resetPassword()">Reset Password</button>
+              </li>
+              <li><hr class="dropdown-divider"></li>
+              <li>
+                <button class="dropdown-item text-danger" (click)="logout()">Logout</button>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  

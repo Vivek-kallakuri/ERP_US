@@ -1,1 +1,37 @@
-/* You can add global styles to this file, and also import other style files */
+.dark-theme {
+    background-color: #121212;
+    color: #ffffff;
+  }
+  
+  /* Example: override navbar in dark mode */
+  .dark-theme .navbar {
+    background-color: #1f1f1f !important;
+  }
+  
+  .dark-theme .card {
+    background-color: #2a2a2a;
+    border: 1px solid #444;
+  }
+  
+  .toast-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* semi-transparent overlay */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1050; /* Bootstrap modal z-index is 1050 */
+  }
+  
+  .toast-message {
+    background-color: #fff;
+    padding: 20px 30px;
+    border-radius: 5px;
+    font-size: 16px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  }
+  

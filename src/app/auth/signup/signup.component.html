@@ -1,0 +1,35 @@
+<div class="container d-flex align-items-center justify-content-center min-vh-100">
+    <div class="card shadow-lg p-4" style="width: 100%; max-width: 400px;">
+      <div class="card-body">
+        <h3 class="card-title text-center mb-4">Sign Up</h3>
+        <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+          <div class="mb-3">
+            <label for="signupEmail" class="form-label">Email address</label>
+            <input id="signupEmail" type="email" formControlName="email" class="form-control" placeholder="Enter your email">
+            <div *ngIf="signupForm.get('email')?.invalid && signupForm.get('email')?.touched" class="form-text text-danger">
+              Please enter a valid email.
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="signupPassword" class="form-label">Password</label>
+            <input id="signupPassword" type="password" formControlName="password" class="form-control" placeholder="Enter your password">
+            <div *ngIf="signupForm.get('password')?.invalid && signupForm.get('password')?.touched" class="form-text text-danger">
+              Password must be at least 6 characters.
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary w-100" [disabled]="signupForm.invalid">Signup</button>
+        </form>
+      </div>
+      <div class="card-footer text-center">
+        <small>Already have an account? <a routerLink="/login">Login</a></small>
+      </div>
+    </div>
+  
+    <!-- Toast Overlay Modal -->
+    <div class="toast-overlay" *ngIf="showToast">
+      <div class="toast-message">
+        {{ toastMessage }}
+      </div>
+    </div>
+  </div>
+  
