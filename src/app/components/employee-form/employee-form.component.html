@@ -1,0 +1,30 @@
+<form #employeeform="ngForm" (ngSubmit)="onSubmit(employeeform)">
+  <div>
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name" [(ngModel)]="employee.name" class="form-control" required />
+  </div>
+
+  <div>
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" [(ngModel)]="employee.email" class="form-control" required />
+  </div>
+
+  <div>
+    <label for="phone">Phone</label>
+    <input type="text" id="phone" name="phone" [(ngModel)]="employee.phone" class="form-control" required />
+  </div>
+
+  <div>
+    <label for="department">Department</label>
+    <input type="text" id="department" name="department" [(ngModel)]="employee.department" class="form-control" required />
+  </div>
+
+  <div>
+    <label for="salary">Salary</label>
+    <input type="number" id="salary" name="salary" [(ngModel)]="employee.salary" class="form-control" required />
+  </div>
+
+  <div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </div>
+</form>

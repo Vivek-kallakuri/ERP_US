@@ -1,0 +1,61 @@
+<div class="container mt-5">
+  <div class="card shadow-lg p-4">
+    <h2 class="text-center mb-4 text-primary">Employee Details</h2>
+
+    <!-- Search & Add Employee Row -->
+    <div class="row mb-4">
+      <div class="col-md-6">
+        <input
+          type="text"
+          class="form-control shadow-sm"
+          placeholder="Search by Name"
+          [(ngModel)]="searchQuery"
+        />
+      </div>
+      <br>
+      <div class="col-md-6 text-end">
+        <button  (click)="goToComponent()" class="btn btn-success shadow-sm" style="color: white; font-weight:bold;">
+           Add New Employee
+        </button>
+       
+      </div>
+    </div>
+    <br>
+
+    <!-- Employee Table -->
+    <div class="table-responsive">
+      <table class="table table-hover align-middle">
+        <thead class="table-primary text-center">
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Department</th>
+            <th>Salary</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let emp of filterEmployees()" class="text-center">
+            <td>{{ emp.name }}</td>
+            <td>{{ emp.email }}</td>
+            <td>{{ emp.phone }}</td>
+            <td>{{ emp.department }}</td>
+            <td>{{ emp.salary | currency }}</td>
+            <td>
+              <button class="btn btn-warning btn-sm me-2 shadow-sm" style="font-weight: bold;" (click)="editEmployee(emp)">
+                 Edit
+              </button>
+              <button class="btn btn-danger btn-sm shadow-sm" style="font-weight: bold;" (click)="deleteEmployee(emp.id)">
+                Delete
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- Include Bootstrap Icons for icons -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" />
