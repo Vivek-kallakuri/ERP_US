@@ -1,0 +1,76 @@
+<div class="container mt-5">
+  <div class="card shadow-lg p-4">
+    <h2 class="text-center mb-4 text-primary">Upload a File</h2>
+
+    <!-- Uploaded By Field -->
+    <div class="mb-3">
+      <label for="uploadedBy" class="form-label fw-bold">Uploaded By:</label>
+      <input 
+        type="text" 
+        id="uploadedBy" 
+        class="form-control" 
+        [(ngModel)]="uploadedBy" 
+        placeholder="Enter name" 
+        required
+      />
+    </div>
+
+    <!-- File Upload Field -->
+    <div class="mb-3">
+      <label class="form-label fw-bold">Select File:</label>
+      <input 
+        type="file" 
+        class="form-control" 
+        (change)="onFileSelected($event)"
+      />
+    </div>
+
+    <!-- Upload Button -->
+    <div class="text-center">
+      <button 
+        class="btn btn-success px-4 py-2 fw-bold" 
+        (click)="uploadFile()" 
+        [disabled]="!selectedFile"
+      >
+        <i class="bi bi-upload"></i> Upload
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Uploaded Files Table -->
+<div class="container mt-5">
+  <div class="card shadow-lg p-4">
+    <h2 class="text-center mb-4 text-primary">Uploaded Files</h2>
+
+    <div class="table-responsive">
+      <table class="table table-bordered table-hover text-center">
+        <thead class="table-dark">
+          <tr>
+            <th>ID</th>
+            <th>File Name</th>
+            <th>Uploaded By</th>
+            <th>Date Uploaded</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let file of allFiles">
+            <td>{{ file.id }}</td>
+            <td>{{ file.fileName }}</td>
+            <td>{{ file.uploadedBy }}</td>
+            <td>{{ file.dateUploaded | date:'medium' }}</td>
+            <td>
+              <button 
+                class="btn btn-primary btn-sm fw-bold" 
+                (click)="downloadFile(file.id, file.fileName)"
+              >
+                <i class="bi bi-download"></i> Download
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
