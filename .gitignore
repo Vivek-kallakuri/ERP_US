@@ -40,3 +40,26 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
+
+# .NET Core build directories
+bin/
+obj/
+
+# User-specific files
+.vscode/
+.idea/
+*.user
+*.suo
+
+# Visual Studio for Mac config folder
+.vs/
+
+# Node.js dependency directories
+node_modules/
+
+# SQL Server files
+*.mdf
+*.ldf
+
+# Others
+*.bak

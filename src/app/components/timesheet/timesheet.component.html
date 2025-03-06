@@ -1,0 +1,24 @@
+<div class="container">
+    <h2>Timesheet List</h2>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Employee ID</th>
+          <th>Date</th>
+          <th>Hours Worked</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let timesheet of timesheet">
+          <td>{{ timesheet.id }}</td>
+          <td>{{ timesheet.employeeId }}</td>
+          <td>{{ timesheet.date }}</td>
+          <td>{{ timesheet.hoursWorked }}</td>
+          <td>{{ timesheet.status }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
