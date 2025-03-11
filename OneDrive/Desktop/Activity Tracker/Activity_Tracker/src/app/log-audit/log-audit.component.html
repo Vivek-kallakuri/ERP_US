@@ -1,0 +1,23 @@
+<div class="container">
+    <h2>Log an Action</h2>
+  
+    <div class="form-group">
+      <label for="userId">User ID:</label>
+      <input id="userId" type="number" [(ngModel)]="userId" placeholder="Enter User ID" />
+    </div>
+  
+    <div class="form-group">
+      <label for="action">Action:</label>
+      <input id="action" type="text" [(ngModel)]="action" placeholder="Enter Action" />
+    </div>
+  
+    <div class="form-group">
+      <label for="timestamp">Timestamp:</label>
+      <input id="timestamp" type="text" [(ngModel)]="timestamp" readonly /> <!-- ✅ Read-only field -->
+    </div>
+  
+    <button (click)="submitLog()">Submit Log</button>
+  
+    <p *ngIf="message">{{ message }}</p>
+  </div>
+  
