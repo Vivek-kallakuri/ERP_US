@@ -11,4 +11,5 @@ import { HttpClientModule } from '@angular/common/http';
 })
 export class AppComponent {
   title = 'timesheet-app';
+  selection = { value: 'default' };  // Add this line to prevent errors
 }

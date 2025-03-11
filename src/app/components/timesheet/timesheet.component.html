@@ -1,24 +1,15 @@
 <div class="container">
-    <h2>Timesheet List</h2>
-    <table class="table">
-      <thead>
-        <tr>
-          <th>ID</th>
-          <th>Employee ID</th>
-          <th>Date</th>
-          <th>Hours Worked</th>
-          <th>Status</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let timesheet of timesheet">
-          <td>{{ timesheet.id }}</td>
-          <td>{{ timesheet.employeeId }}</td>
-          <td>{{ timesheet.date }}</td>
-          <td>{{ timesheet.hoursWorked }}</td>
-          <td>{{ timesheet.status }}</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-  
+  <h2>Log Work Hours</h2>
+  <form>
+    <label>Date:</label>
+    <input type="date" class="form-control">
+
+    <label>Hours Worked:</label>
+    <input type="number" class="form-control">
+
+    <label>Description:</label>
+    <textarea class="form-control"></textarea>
+
+    <button class="btn btn-primary mt-2">Submit</button>
+  </form>
+</div>

@@ -11,6 +11,10 @@ export class TimesheetService {
 
   constructor(private http: HttpClient) { }
 
+  submitTimesheet(timesheet: any): Observable<any> {
+    return this.http.post(`${this.apiUrl}/submit`, timesheet);
+  }
+
   // Get all timesheets
   getTimesheets(): Observable<any[]> {
     return this.http.get<any[]>(this.apiUrl);
@@ -29,6 +33,14 @@ export class TimesheetService {
   // Delete a timesheet
   deleteTimesheet(id: number): Observable<any> {
     return this.http.delete<any>(`${this.apiUrl}/${id}`);
+  }
+  
+  approveTimesheet(timesheetId: number): Observable<any> {
+    return this.http.put(`${this.apiUrl}/approve/${timesheetId}`, {});
+  }
+
+  rejectTimesheet(timesheetId: number): Observable<any> {
+    return this.http.put(`${this.apiUrl}/reject/${timesheetId}`, {});
   }
 }
 
